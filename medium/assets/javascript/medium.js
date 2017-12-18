@@ -38,6 +38,66 @@
 
 (function(){
 
+  const teamoneshootButton =$("#teamone-shoot");
+
+  const teamtwoshootButton =$("#teamtwo-shoot");
+
+  const resetButton =$("#reset");
+
+  const resetCount =$("#num-resets");
+
+  const teamoneShotCount =$("#teamone-numshots");
+
+  const teamoneGoalCount =$("#teamone-numhits");
+
+  const teamtwoShotCount =$("#teamtwo-numshots");
+
+  const teamtwoGoalCount =$("#teamtwo-numhits");
+
+  const body =$("#body");
+
+
+  teamoneshootButton.click (function() {
+
+    teamoneShotCount.html (parseInt(teamoneShotCount.html())+1);
+
+    if(Math.random()>.5){
+
+      teamoneGoalCount.html (parseInt(teamoneGoalCount.html())+1);
+        // body.css("background-color", "green");
+        $("body").css("background-image", 'url("assets/jpgs/Rick.jpg")');
+
+    }
+
+ })
+
+ teamtwoshootButton.click (function() {
+  
+      teamtwoShotCount.html (parseInt(teamtwoShotCount.html())+1);
+  
+      if(Math.random()>.5){
+  
+        teamtwoGoalCount.html (parseInt(teamtwoGoalCount.html())+1);
+        // body.css("background-color", "red");
+        $("body").css("background-image", 'url("assets/jpgs/Neegan.jpg")');
+  
+      }
+
+    })
+
+
+    resetButton.click (function() {
+      
+          resetCount.html (parseInt(resetCount.html())+1);
+          $("body").css("background-image", 'url("assets/jpgs/TWD.jpg")');
+
+          teamoneGoalCount.html(0);
+          teamoneShotCount.html(0);
+          teamtwoGoalCount.html(0);
+          teamtwoShotCount.html(0);    
+        })
+
+
   //jQuery equivelent to window.onload = function{}
   //code in here wont run until page loads
   $(function(){
